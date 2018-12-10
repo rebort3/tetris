@@ -12,8 +12,8 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        <div id="original">original</div>
-        <div id="girada">girada</div>
+        <div id="mapa">mapa</div>
+
       <p>Puntuacio:<div id="punts"> </div> </p>
 
     </body>
@@ -22,8 +22,16 @@ and open the template in the editor.
   const jugador = {
     
     punts: 0,
+    peces: 0,
+    nivell: 1,
 };
 
+var Peça = function(forma, color, x, y)
+        { this.forma = forma;
+          this.color = color;
+          this.x = x;  
+          this.y = y;
+          };
 
         function GeneraPecaAleatoria()
          { var peces = [
@@ -41,26 +49,31 @@ and open the template in the editor.
 
        function mapa()
          { var resultat = "<table border='1'>";
-         var tauler = new Array(25);
+         var tauler = new Array();
+         
            for (var i = 0; i < 25;i++)
+          
             { resultat = resultat + "<tr>"
-              
+
+                tauler[i] = new Array();
                 for (var j = 0; j<10;j++) 
-                 { resultat = resultat + "<td id="+ i + "-" + j + ">";
+                 { resultat = resultat + "<td id=0>";
+                  
                     resultat = resultat + "0";
-                    tauler[i][j] = new Array(25);
+                    tauler[i][j] = new Array();
                    resultat = resultat + "</td>";
                    }
               resultat = resultat + "</tr>";
               }
             resultat = resultat + "</table>";
+
             return resultat;
            };                      
          
 
          
 
-document.getElementById("original").innerHTML = mapa();
+document.getElementById("mapa").innerHTML = mapa();
        
          function posarpunts() {
            
@@ -70,12 +83,6 @@ document.getElementById("original").innerHTML = mapa();
 
  
 
-$(document).ready(function(){
-  $(document).keypress(function(e){
-    
-    if
-  });
-}) 
                    
 
       
