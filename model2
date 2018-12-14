@@ -1,0 +1,43 @@
+var tauler= [];
+
+for( f = 0; f <20; f++){
+
+    tauler[f] = [];
+
+    for(c = 0; c < 10; c++){
+
+        tauler[f][c] = lliure;
+        
+    }
+
+}
+
+crearTauler();
+
+function crearTauler(){
+    for( f = 0; f <20; f++){
+
+        for(c = 0; c < 10; c++){
+
+            casella(c,f,tauler[f][c]);
+        }
+
+    }
+
+}
+
+ function GeneraPecaAleatoria()
+         { var peces = [
+                 [[[0,0,0,0],[0,1,1,0],[0,1,1,0],[0,0,0,0]],"groc"],
+                 [[[0,1,0,0],[0,1,0,0],[0,1,0,0],[0,1,0,0]],"lila"],
+                 [[[0,0,0,0],[0,1,1,0],[1,1,0,0],[0,0,0,0]],"verd"],
+                 [[[0,0,0,0],[0,1,1,0],[0,0,1,1],[0,0,0,0]],"roig"],
+                 [[[0,1,0,0],[0,1,0,0],[0,1,1,0],[0,0,0,0]],"blau"],
+                 [[[0,1,1,0],[0,1,0,0],[0,1,0,0],[0,0,0,0]],"taronga"],
+                 [[[0,0,0,0],[1,1,1,0],[0,1,0,0],[0,0,0,0]],"morat"] ]
+           var numeroAleatori = Math.round(Math.random()*6);                      
+           return peces[numeroAleatori];     
+       }
+       
+       var pa = GeneraPecaAleatoria();
+         var p = new Peça(pa[0],pa[1]);
