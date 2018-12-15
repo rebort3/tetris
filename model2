@@ -41,3 +41,40 @@ function crearTauler(){
        
        var pa = GeneraPecaAleatoria();
          var p = new Peça(pa[0],pa[1]);
+         
+
+Piece.prototype.moureDreta = function(){
+    if(!this.collision(1,0,this.peça)){
+        this.x++;
+        this.fill(lliure);
+        
+       
+    }
+}
+
+// move Left the piece
+Piece.prototype.moureEsquerra = function(){
+    if(!this.collision(-1,0,this.peça)){
+        this.x--;
+        this.fill(lliure);
+        
+          }
+}
+
+peça.prototype.collision = function(x,y,peça){
+
+    for( f = 0; f < peça.length; f++){
+    
+        for(c = 0; c < peça.length; c++){
+
+            var x2 = this.x + c + x;
+            var y2 = this.y + f + y;
+            
+           
+            if(x2 < 0 || x2 >= 10 || y2 >= 20){
+                return true;
+            }
+        }
+    }
+    return false;
+}
